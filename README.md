@@ -1,5 +1,5 @@
 # Image_gen-VAES-Diffusers
-Using the quantized version of Stability Diffusion_XL latest model with curated prompt for realistic image gen
+Using the quantized version of Stability Diffusion_XL latest model with curated prompt for realistic image gen on limited VRAM
 
 
 # Example 1:
