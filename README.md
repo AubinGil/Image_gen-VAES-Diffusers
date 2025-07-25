@@ -1,5 +1,5 @@
 # Image_gen-VAES-Diffusers
-Using the quantized version of Stability Diffusion_XL latest model with curated prompt for realistic image gen on limited VRAM
+Using the quantized version of Stability Diffusion_XL latest model with curated prompt for realistic image gen with capabilities of generating correct text on limited VRAM
 
 
 # Example 1:
@@ -16,6 +16,9 @@ Using the quantized version of Stability Diffusion_XL latest model with curated 
 
 # Example 4:
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/55314275-a99c-4f60-b57a-76f337181fc1" />
+
+# Example 5
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/3987fbf1-50e1-4374-add0-4b025fe0cdc6" />
 
 
 
