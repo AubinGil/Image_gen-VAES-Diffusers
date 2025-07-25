@@ -14,6 +14,11 @@ Using the quantized version of Stability Diffusion_XL latest model with curated 
 # Example 3:
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/3f4dbd9e-e224-41e0-8d70-5249a91473ad" />
 
+# Example 4:
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/55314275-a99c-4f60-b57a-76f337181fc1" />
+
+
+
 
 cff-version: 1.2.0
 title: "Stable Diffusion XL"
