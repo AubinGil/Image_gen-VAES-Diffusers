@@ -1,5 +1,6 @@
 # Image_gen-VAES-Diffusers
 Using the quantized version of Stability Diffusion_XL latest model with curated prompt for realistic image gen with capabilities of generating correct text on limited VRAM
+-a hugging face account is needed to access the gated model
 
 
 # Example 1:
