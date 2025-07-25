@@ -1,0 +1,60 @@
+pip install bitsandbytes
+
+from diffusers import BitsAndBytesConfig, SD3Transformer2DModel
+from diffusers import StableDiffusion3Pipeline
+import torch
+
+model_id = "stabilityai/stable-diffusion-3.5-large"
+
+nf4_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+model_nf4 = SD3Transformer2DModel.from_pretrained(
+    model_id,
+    subfolder="transformer",
+    quantization_config=nf4_config,
+    torch_dtype=torch.bfloat16
+)
+
+pipeline = StableDiffusion3Pipeline.from_pretrained(
+    model_id, 
+    transformer=model_nf4,
+    torch_dtype=torch.bfloat16
+)
+pipeline.enable_model_cpu_offload()
+
+#Sample inference
+from diffusers import BitsAndBytesConfig, SD3Transformer2DModel
+from diffusers import StableDiffusion3Pipeline
+import torch
+from PIL import Image
+from IPython.display import display
+
+pipeline.enable_model_cpu_offload()
+
+prompt = (
+    "A realistic portrait of a young tribal woman standing in a lush tropical jungle, "
+    "her face illuminated by soft morning light filtering through the trees. "
+    "She has natural glowing skin, intricate facial features, and wears traditional handmade jewelry and fabrics. "
+    "The background is filled with misty ferns, orchids, and towering jungle trees. "
+    "Highly detailed, cinematic lighting, ultra-realistic."
+)
+
+negative_prompt = (
+    "blurry, distorted face, extra limbs, extra fingers, deformed eyes, bad anatomy, cartoon, low resolution, "
+    "oversaturated, unnatural skin, text, watermark"
+)
+
+image = pipeline(
+    prompt=prompt,
+    negative_prompt=negative_prompt,
+    num_inference_steps=28,
+    guidance_scale=4.5,
+    max_sequence_length=512,
+).images[0]
+
+image.save("jungle_portrait.png")
+image = Image.open("jungle_portrait.png")
+display(image)
