@@ -16,7 +16,6 @@ Using the quantized version of Stability Diffusion_XL latest model with curated 
 
 
 cff-version: 1.2.0
-message: "If you use Stable Diffusion XL in your work, please cite it as below."
 title: "Stable Diffusion XL"
 authors:
   - family-names: Rombach
